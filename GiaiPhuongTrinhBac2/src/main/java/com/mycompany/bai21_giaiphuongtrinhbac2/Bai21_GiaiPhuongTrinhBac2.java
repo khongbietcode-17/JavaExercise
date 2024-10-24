@@ -126,43 +126,8 @@ public class Bai21_GiaiPhuongTrinhBac2 {
             }
         });
 
-        // Xử lý nút "Thoát"
-        buttonThoat.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                int ret = JOptionPane.showConfirmDialog(null, "Muốn thoát hả?", "Thoát", JOptionPane.YES_NO_OPTION); 
-                if (ret == JOptionPane.YES_OPTION) {
-                    System.exit(0);
-                }
-            }
-        });
-        buttonGiai.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    double a = Double.parseDouble(txtSoa.getText());
-                    double b = Double.parseDouble(txtSob.getText());
-                    double c = Double.parseDouble(txtSoc.getText());
-                    String result = giaiPhuongTrinhBac2(a, b, c);
-                    txtKQ.setText(result);
-                } catch (NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(frame, "Vui lòng nhập số hợp lệ!", "Lỗi", JOptionPane.ERROR_MESSAGE);
-                }
-            }
-        });
+        }
         
-        // Xử lý nút "Xóa"
-        buttonXoa.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                txtSoa.setText("");
-                txtSob.setText("");
-                txtSoc.setText("");
-                txtKQ.setText("");
-                txtSoa.requestFocus();
-            }
-        });        
-    }
         // Phương thức giải phương trình bậc 2
         private static String giaiPhuongTrinhBac2(double a, double b, double c) {
         if (a == 0) {
